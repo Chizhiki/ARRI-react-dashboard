@@ -1,0 +1,13 @@
+.topbar-menu-item {
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.25s ease-in-out;
+}
+
+.topbar-menu-item:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.082);
+}
+
+.topbar-menu-item:hover::after {
+    width: 100%; /* Линия появляется снизу */
+}

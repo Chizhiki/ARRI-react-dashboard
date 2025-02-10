@@ -1,0 +1,29 @@
+.sidebar-menu-item {
+    position: relative;
+    transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out, color 0.05s ease-in-out;
+}
+.sidebar-menu-item svg {
+    position: relative;
+    bottom: 2px;  /* подберите значение опытным путём */
+  }
+.sidebar-menu-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Псевдоэлемент для создания линии под элементом */
+.sidebar-menu-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 140, 0);
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar-menu-item:hover::after {
+    width: 100%; /* Линия появляется снизу */
+}
+/*153, 214, 255*/
