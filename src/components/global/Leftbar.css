@@ -4,14 +4,14 @@
 }
 .sidebar-menu-item svg {
     position: relative;
-    bottom: 2px;  /* подберите значение опытным путём */
+    bottom: 2px;  
   }
 .sidebar-menu-item:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Псевдоэлемент для создания линии под элементом */
+
 .sidebar-menu-item::after {
     content: '';
     position: absolute;
@@ -24,6 +24,5 @@
 }
 
 .sidebar-menu-item:hover::after {
-    width: 100%; /* Линия появляется снизу */
+    width: 100%; 
 }
-/*153, 214, 255*/

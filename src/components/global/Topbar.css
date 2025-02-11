@@ -9,5 +9,5 @@
 }
 
 .topbar-menu-item:hover::after {
-    width: 100%; /* Линия появляется снизу */
+    width: 100%;
 }

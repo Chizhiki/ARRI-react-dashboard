@@ -11,7 +11,6 @@ const SubsidyDialog = ({ open, onClose, subsidies, onSelectSubsidy }) => {
   const colors = tokens(theme.palette.mode);
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Фильтрация субсидий по введённому запросу
   const filteredSubsidies = subsidies.filter((subsidy) =>
     subsidy.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -37,7 +36,6 @@ const SubsidyDialog = ({ open, onClose, subsidies, onSelectSubsidy }) => {
       }}
     >
       <DialogContent>
-        {/* Поле поиска */}
         <Box sx={{ px: 2, py: 1 }}>
           <TextField
             variant="outlined"
@@ -49,7 +47,6 @@ const SubsidyDialog = ({ open, onClose, subsidies, onSelectSubsidy }) => {
             fullWidth
           />
         </Box>
-        {/* Список карточек с фильтрацией */}
         <SubsidyList
           subsidies={filteredSubsidies}
           onSelectSubsidy={onSelectSubsidy}

@@ -26,7 +26,6 @@ const SubsidySelector = ({ currentSubsidy, subsidies, onSubsidyChange, sx }) => 
 
   return (
     <>
-      {/* Отображение основной карточки */}
       <SubsidyCard
         subsidy={currentSubsidy}
         onClick={handleCardClick}
@@ -36,7 +35,6 @@ const SubsidySelector = ({ currentSubsidy, subsidies, onSubsidyChange, sx }) => 
           ...sx,
         }}
       />
-      {/* Всплывающее окно для выбора субсидии */}
       <SubsidyDialog
         open={openDialog}
         onClose={handleDialogClose}

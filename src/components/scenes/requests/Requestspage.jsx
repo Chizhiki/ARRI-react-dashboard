@@ -16,21 +16,18 @@ const Requestspage = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  // Основные состояния: список субсидий и выбранная субсидия
   const [subsidies, setSubsidies] = useState([]);
   const [selectedSubsidy, setSelectedSubsidy] = useState(null);
   const [accountBalance, setAccountBalance] = useState(0);
   const [allocatedFunds, setAllocatedFunds] = useState(0);
 
   useEffect(() => {
-    // Загрузка субсидий из JSON-файла
     setSubsidies(subsidiesData);
     if (subsidiesData.length) setSelectedSubsidy(subsidiesData[0]);
   }, []);
 
   useEffect(() => {
     if (selectedSubsidy) {
-      // Здесь можно сделать запрос за балансом аккаунта на основе выбранной субсидии
       //fetchAccountBalance(selectedSubsidy.id);
     }
   }, [selectedSubsidy]);
@@ -39,7 +36,6 @@ const Requestspage = () => {
     setSelectedSubsidy(newSubsidy);
   };
 
-  // Базовые стили для панелей
   const basePanelStyle = {
     borderRadius: "10px",
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
@@ -64,7 +60,6 @@ const Requestspage = () => {
 
   return (
     <Box sx={{ marginLeft: 2, padding: 2 }}>
-      {/* Хлебные крошки */}
       <Breadcrumbs
         aria-label="breadcrumb"
         separator={<NavigateNextIcon fontSize="small" />}
@@ -78,10 +73,8 @@ const Requestspage = () => {
         </Typography>
       </Breadcrumbs>
 
-      {/* Основная колонка */}
       <Stack direction="column" spacing={3} sx={{ mt: 2 }}>
         <Stack direction="row" spacing={3} sx={{ mt: 2 }}>
-          {/* Левая часть (несколько панелей) */}
           <Box sx={{ ...flexColumnContainer, flex: 4 }}>
             <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
               <SubsidySelector
@@ -103,13 +96,11 @@ const Requestspage = () => {
             </Box>
           </Box>
 
-          {/* Правая часть */}
           <Box sx={{ ...compsPanelStyle, flex: "2 1 0", minWidth: 150 }}>
             Панель 4
           </Box>
         </Stack>
 
-        {/* Нижний блок */}
         <Box sx={{ ...flexColumnContainer, flex: 3 }}>
           <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
             <Box sx={{ ...compsPanelStyle, flex: "2 1 0", minWidth: 150 }}>

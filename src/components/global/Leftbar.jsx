@@ -16,26 +16,24 @@ import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 const Leftbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  //const colorMode = useContext(ColorModeContext);
   const { collapseSidebar, collapsed } = useProSidebar();
 
   return (
     <div style={{ display: "flex"}}>
       <Sidebar
-        //backgroundColor={theme.palette.background.paper}
         backgroundColor={theme.gradients.fancy}
         style={{
           position: "fixed",
           top: 15,
           left: 10,
           width: collapsed ? 80 : 280,
-          height: "calc(100% - 30px)", // подгоняем высоту с учётом отступов
+          height: "calc(100% - 30px)",
           background: theme.gradients.fancy,
           color: "rgb(227, 227, 227)",
           border: "none",
           borderRadius: "10px",
           overflow: "hidden",     
-          boxShadow: "0 1px 5px 1px rgba(0, 0, 0, 0.48)" // Добавление размытой тени
+          boxShadow: "0 1px 5px 1px rgba(0, 0, 0, 0.48)"
         }}>
         <Menu iconShape="square" menuItemStyles={{button: {backgroundColor: 'transparent !important'},}}>
           <MenuItem color="inherit" className="sidebar-menu-item" icon={<MenuOutlinedIcon onClick={() => {collapseSidebar();}}/>}>

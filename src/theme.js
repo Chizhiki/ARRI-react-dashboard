@@ -4,7 +4,6 @@ import { createTheme } from "@mui/material/styles";
 export const tokens = (mode) => ({
   ...(mode === "light"
     ? {
-        // ================== СВЕТЛАЯ ТЕМА ==================
         white: {
           100: "#f8f9fc",
           200: "#f0f2f8",
@@ -69,7 +68,6 @@ export const tokens = (mode) => ({
         },
       }
     : {
-        // ================== ТЁМНАЯ ТЕМА ==================
         white: {
           100: "#181a2f",
           200: "#212339",
@@ -128,7 +126,7 @@ export const tokens = (mode) => ({
 
         gradients: {
           main: "linear-gradient(135deg, #303f96 0%, #363a76 100%)",
-          fancy: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))", // Для тёмной темы
+          fancy: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))", 
           comps: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))",
           orange: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))",
         },
@@ -144,7 +142,6 @@ export const themeSettings = (mode) => {
       mode: mode,
       ...(mode === "dark"
         ? {
-            // ----------- ТЁМНАЯ ПАЛИТРА -----------
             primary: {
               main: colors.primary[500],
             },
@@ -162,7 +159,6 @@ export const themeSettings = (mode) => {
             },
           }
         : {
-            // ----------- СВЕТЛАЯ ПАЛИТРА -----------
             primary: {
               main: colors.primary[500],
             },
@@ -185,14 +181,12 @@ export const themeSettings = (mode) => {
       mode: mode,
       ...(mode === "dark"
         ? {
-            // ----------- ТЁМНАЯ ПАЛИТРА -----------
             main: colors.gradients.main, 
             fancy: colors.gradients.fancy,
             comps: colors.gradients.comps,
             orange: colors.gradients.orange
           }
         : {
-            // ----------- СВЕТЛАЯ ПАЛИТРА -----------
             main: colors.gradients.main,   
             fancy: colors.gradients.fancy, 
             comps: colors.gradients.comps,
@@ -231,12 +225,10 @@ export const themeSettings = (mode) => {
   };
 };
 
-// ----- КОНТЕКСТ ДЛЯ ПЕРЕКЛЮЧЕНИЯ ТЕМ -----
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 });
 
-// ----- ХУК useMode (с localStorage + prefers-color-scheme) -----
 export const useMode = () => {
   const systemPrefersDark = window.matchMedia
     ? window.matchMedia("(prefers-color-scheme: dark)").matches

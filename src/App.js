@@ -26,7 +26,7 @@ function App() {
             className="content"
             style={{ 
               marginLeft: collapsed ? 80 : 280, 
-              transition: "margin-left 0.3s" // для красивой анимации при сворачивании
+              transition: "margin-left 0.3s"
             }}>
             <Topbar/>
             <Routes>

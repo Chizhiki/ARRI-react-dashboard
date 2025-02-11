@@ -22,7 +22,6 @@ const SubsidyCard = ({ subsidy, onClick, hideLabel, sx }) => {
         ...sx,
       }}
     >
-      {/* Верхняя часть карточки */}
       <Box
         sx={{
           display: "flex",
@@ -50,7 +49,6 @@ const SubsidyCard = ({ subsidy, onClick, hideLabel, sx }) => {
         }}
       />
 
-      {/* Основная часть карточки */}
       <Box sx={{ px: 1, py: 1 }}>
         {subsidy ? (
           <>
