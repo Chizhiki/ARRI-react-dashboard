@@ -1,5 +1,5 @@
 import { ColorModeContext, useMode } from "./theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider, GlobalStyles } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import {useProSidebar } from "react-pro-sidebar";
 import Topbar from "./components/global/Topbar";
@@ -19,6 +19,16 @@ function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
+      <GlobalStyles
+        styles={{
+          body: {
+            background: theme.gradients.greybackground,
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",  
+            backgroundSize: "cover",
+          },
+        }}
+      />
         <CssBaseline/>
         <div className="app">
           <Leftbar/>

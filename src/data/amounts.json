@@ -1,0 +1,53 @@
+[
+    {
+      "subsidyId": 1,
+      "accountBalance": 250000,
+      "allocatedFunds": 750000
+    },
+    {
+      "subsidyId": 2,
+      "accountBalance": 150000,
+      "allocatedFunds": 600000
+    },
+    {
+      "subsidyId": 3,
+      "accountBalance": 500000,
+      "allocatedFunds": 1500000
+    },
+    {
+      "subsidyId": 4,
+      "accountBalance": 250000,
+      "allocatedFunds": 1000000
+    },
+    {
+      "subsidyId": 5,
+      "accountBalance": 500000,
+      "allocatedFunds": 2000000
+    },
+    {
+      "subsidyId": 6,
+      "accountBalance": 1000000,
+      "allocatedFunds": 2000000
+    },
+    {
+      "subsidyId": 7,
+      "accountBalance": 500000,
+      "allocatedFunds": 1000000
+    },
+    {
+      "subsidyId": 8,
+      "accountBalance": 800000,
+      "allocatedFunds": 1000000
+    },
+    {
+      "subsidyId": 9,
+      "accountBalance": 700000,
+      "allocatedFunds": 1500000
+    },
+    {
+      "subsidyId": 10,
+      "accountBalance": 300000,
+      "allocatedFunds": 700000
+    }
+  ]
+  

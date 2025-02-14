@@ -4,13 +4,17 @@ import {
   Stack,
   Typography,
   Breadcrumbs,
-  useTheme
+  useTheme, 
+  Divider
 } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { tokens } from "../../../theme";
 import subsidiesData from "../../../data/subsidies.json";
+import amountsData from "../../../data/amounts.json";
 import SubsidySelector from "../../local/SubsidySelector";
 import BalancePanel from "../../local/BalancePanel";
+import AllocatedFundsPanel from "../../local/AllocatedFundsPanel";
+import RequestAllocationList from "../../local/RequestAllocationList";
 
 const Requestspage = () => {
   const theme = useTheme();
@@ -28,9 +32,20 @@ const Requestspage = () => {
 
   useEffect(() => {
     if (selectedSubsidy) {
-      //fetchAccountBalance(selectedSubsidy.id);
+      fetchAmounts(selectedSubsidy.id);
     }
   }, [selectedSubsidy]);
+
+  const fetchAmounts = (subsidyId) => {
+    const found = amountsData.find(item => item.subsidyId === subsidyId);
+    if (found) {
+      setAccountBalance(found.accountBalance);
+      setAllocatedFunds(found.allocatedFunds);
+    } else {
+      setAccountBalance(0);
+      setAllocatedFunds(0);
+    }
+  };
 
   const handleSubsidyChange = (newSubsidy) => {
     setSelectedSubsidy(newSubsidy);
@@ -44,7 +59,9 @@ const Requestspage = () => {
 
   const compsPanelStyle = {
     ...basePanelStyle,
-    background: theme.gradients.comps,
+    background: 0,
+    border: 1,
+    borderColor: "rgba(88, 88, 88, 0.2)"
   };
 
   const fancyPanelStyle = {
@@ -83,39 +100,40 @@ const Requestspage = () => {
                 subsidies={subsidies}
                 onSubsidyChange={handleSubsidyChange}
               />
-              <Box sx={{ ...compsPanelStyle, width: 200, height: 200 }}>
-                <Typography variant="h5">Панель 2</Typography>
-              </Box>
-              <Box sx={{ ...compsPanelStyle, width: 200, height: 200 }}>
-                Панель 3
-              </Box>
-            </Box>
 
+              <BalancePanel amount={accountBalance} sx={{ ...compsPanelStyle, width: 200, height: 200 }} />
+              
+              <AllocatedFundsPanel amount={allocatedFunds} sx={{ ...compsPanelStyle, width: 200, height: 200 }} />
+            </Box>
+            
             <Box sx={{ ...compsPanelStyle, minWidth: 150, height: 150 }}>
               Панель 5
             </Box>
           </Box>
-
+          
           <Box sx={{ ...compsPanelStyle, flex: "2 1 0", minWidth: 150 }}>
-            Панель 4
+            <RequestAllocationList/>
           </Box>
         </Stack>
-
+        
         <Box sx={{ ...flexColumnContainer, flex: 3 }}>
           <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
             <Box sx={{ ...compsPanelStyle, flex: "2 1 0", minWidth: 150 }}>
               Панель 6
             </Box>
+            
 
             <Box sx={{ ...flexColumnContainer, flex: 3 }}>
               <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
                 <Box sx={{ ...compsPanelStyle, flex: "1 1 0", minWidth: 150, height: 400 }}>
                   Панель 7
                 </Box>
+                
                 <Box sx={{ ...compsPanelStyle, flex: "1 1 0", minWidth: 150, height: 400 }}>
                   Панель 8
                 </Box>
               </Box>
+              
               <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
                 <Box sx={{ ...compsPanelStyle, flex: "1 1 0", minWidth: 150, height: 400 }}>
                   Панель 9
@@ -124,6 +142,7 @@ const Requestspage = () => {
             </Box>
           </Box>
         </Box>
+        
       </Stack>
     </Box>
   );

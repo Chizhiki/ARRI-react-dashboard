@@ -31,7 +31,7 @@ const SubsidySelector = ({ currentSubsidy, subsidies, onSubsidyChange, sx }) => 
         onClick={handleCardClick}
         sx={{
           width: cardWidth,
-          backgroundColor: colors.primary[400],
+          background: theme.gradients.orange,
           ...sx,
         }}
       />
@@ -48,6 +48,7 @@ const SubsidySelector = ({ currentSubsidy, subsidies, onSubsidyChange, sx }) => 
 SubsidySelector.propTypes = {
   currentSubsidy: PropTypes.shape({
     id: PropTypes.number,
+    code: PropTypes.string,
     name: PropTypes.string,
     startDate: PropTypes.string,
     endDate: PropTypes.string,
@@ -57,6 +58,7 @@ SubsidySelector.propTypes = {
   subsidies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
+      code: PropTypes.string,
       name: PropTypes.string,
       startDate: PropTypes.string,
       endDate: PropTypes.string,

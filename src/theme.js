@@ -62,9 +62,10 @@ export const tokens = (mode) => ({
 
         gradients: {
           main: `linear-gradient(100deg, rgb(163, 163, 163) 50%,rgb(124, 124, 124) 100%)`,
-          fancy: `linear-gradient(80deg,rgb(53, 53, 53) 0%, rgb(35, 35, 35) 20%,rgb(53, 53, 53)  90%)`,
+          fancy: `rgb(53, 53, 53)`,
           comps: 'rgb(255, 255, 255)',
-          orange: `linear-gradient(100deg,rgb(252, 126, 9) 0%, rgb(252, 118, 0) 20%,rgb(255, 158, 67) 90%)`,
+          greybackground: "rgb(246, 249, 254)",
+          orange: `rgb(33, 141, 255)`,
         },
       }
     : {
@@ -126,9 +127,14 @@ export const tokens = (mode) => ({
 
         gradients: {
           main: "linear-gradient(135deg, #303f96 0%, #363a76 100%)",
-          fancy: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))", 
-          comps: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))",
-          orange: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))",
+          //fancy: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))", 
+          fancy: `rgb(53, 53, 53)`,
+          fancysec: `rgb(53, 53, 53)`,
+          //comps: "linear-gradient(120deg,rgb(30, 35, 67),rgb(49, 55, 102))",
+          greybackground: "linear-gradient(120deg,rgb(53, 53, 53) 10%,rgb(28, 28, 28) 60%)",
+          comps: `rgba(53, 53, 53)`,
+          //orange: `linear-gradient(100deg,rgb(252, 126, 9) 0%, rgb(252, 0, 0) 20%,rgb(145, 67, 255) 90%)`,
+          orange: 'linear-gradient(120deg,rgb(255, 85, 0) 20%, rgb(255, 112, 23) 90%)' 
         },
 
       }
@@ -154,7 +160,7 @@ export const themeSettings = (mode) => {
               light: colors.orange[100],
             },
             background: {
-              default: "#141936", 
+              default: "rgb(33, 33, 33)", 
               paper: "rgb(25, 30, 56)", 
             },
           }
@@ -184,13 +190,15 @@ export const themeSettings = (mode) => {
             main: colors.gradients.main, 
             fancy: colors.gradients.fancy,
             comps: colors.gradients.comps,
-            orange: colors.gradients.orange
+            orange: colors.gradients.orange,
+            greybackground: colors.gradients.greybackground
           }
         : {
             main: colors.gradients.main,   
             fancy: colors.gradients.fancy, 
             comps: colors.gradients.comps,
-            orange: colors.gradients.orange
+            orange: colors.gradients.orange,
+            greybackground: colors.gradients.greybackground
           }),
     },
 

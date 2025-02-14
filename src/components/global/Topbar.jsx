@@ -18,8 +18,9 @@ const Topbar = () => {
         <Box display="flex" 
         sx={{
           position: "fixed",
-          background: theme.gradients.comps,
-          border: "none",
+          background: 0,
+          border: 1,
+          borderColor: 'rgb(53, 53, 53)',
           color: theme.palette.text.primary,
           borderRadius: "10px",
           boxShadow: "0 1px 5px 1px rgba(0, 0, 0, 0.17)"

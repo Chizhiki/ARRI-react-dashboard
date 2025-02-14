@@ -22,52 +22,50 @@ const SubsidyCard = ({ subsidy, onClick, hideLabel, sx }) => {
         ...sx,
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "start",
-          p: 0.1,
-        }}
-      >
-        {!hideLabel && (
-          <Typography variant="h6" sx={{ fontWeight: 800, ml: 1 }}>
-            СУБСИДИЯ
-          </Typography>
-        )}
-        {!hideLabel && (
-          <Box sx={{ mr: 1, mt: 0.5 }}>
-            <CreditCardIcon fontSize="medium" sx={{ opacity: 1.0 }} />
-          </Box>
-        )}
-      </Box>
+    {subsidy && (
+      <>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "start",
+            p: 0.1,
+          }}
+        >
+        <Typography variant="h5" sx={{ fontWeight: 500, ml: 1 }}>
+          {subsidy.name}
+        </Typography>  
+        <Typography variant="h5" sx={{ fontWeight: 500, ml: 1}}>
+          №{subsidy.code}
+        </Typography>
+        </Box>
 
-      <Divider
-        sx={{
-          mx: 1,
-          backgroundColor: "rgba(255, 255, 255, 0.89)",
-        }}
-      />
+        <Divider
+          sx={{
+            mx: 1,
+            mt: 1,
+            //backgroundColor: "rgba(255, 255, 255, 0.46)",
+          }}
+        />
+      </>
+    )}
 
-      <Box sx={{ px: 1, py: 1 }}>
+      <Box sx={{ px: 1, py: 2 }}>
         {subsidy ? (
           <>
-            <Typography variant="h5" sx={{ fontWeight: 500, mb: 1 }}>
-              {subsidy.name}
-            </Typography>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
               <EventIcon fontSize="medium" />
               <Typography variant="h6" sx={{ fontWeight: 500, mb: -0.3 }}>
                 {subsidy.startDate} – {subsidy.endDate}
               </Typography>
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
               <CurrencyRubleIcon fontSize="medium" />
               <Typography variant="h6" sx={{ fontWeight: 500, mb: -0.3 }}>
                 {subsidy.amount}
               </Typography>
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <Box sx={{ display: "flex", alignItems: "right", gap: 2 }}>
               <ReceiptLongIcon fontSize="medium" />
               <Typography variant="h6" sx={{ fontWeight: 500, mb: -0.3 }}>
                 {subsidy.contestType}
@@ -87,6 +85,7 @@ const SubsidyCard = ({ subsidy, onClick, hideLabel, sx }) => {
 SubsidyCard.propTypes = {
   subsidy: PropTypes.shape({
     id: PropTypes.number,
+    code: PropTypes.string,
     name: PropTypes.string,
     startDate: PropTypes.string,
     endDate: PropTypes.string,

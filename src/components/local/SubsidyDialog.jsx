@@ -28,7 +28,7 @@ const SubsidyDialog = ({ open, onClose, subsidies, onSelectSubsidy }) => {
       maxWidth="md"
       PaperProps={{
         sx: {
-          backgroundColor: colors.orange[500],
+          background: theme.gradients.orange,
           borderRadius: "12px",
           boxShadow: "0 4px 14px rgba(0, 0, 0, 0.3)",
           overflow: "hidden",
@@ -50,7 +50,6 @@ const SubsidyDialog = ({ open, onClose, subsidies, onSelectSubsidy }) => {
         <SubsidyList
           subsidies={filteredSubsidies}
           onSelectSubsidy={onSelectSubsidy}
-          hideLabel={true}
         />
       </DialogContent>
     </Dialog>

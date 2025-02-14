@@ -24,18 +24,19 @@ const Leftbar = () => {
         backgroundColor={theme.gradients.fancy}
         style={{
           position: "fixed",
-          top: 15,
-          left: 10,
+          //top: 15,
+          //left: 10,
           width: collapsed ? 80 : 280,
-          height: "calc(100% - 30px)",
+          height: '100%',
+          //height: "calc(100% - 30px)",
           background: theme.gradients.fancy,
           color: "rgb(227, 227, 227)",
           border: "none",
-          borderRadius: "10px",
+          //borderRadius: "10px",
           overflow: "hidden",     
-          boxShadow: "0 1px 5px 1px rgba(0, 0, 0, 0.48)"
+          boxShadow: "0 1px 5px 1px rgba(0, 0, 0, 0.24)"
         }}>
-        <Menu iconShape="square" menuItemStyles={{button: {backgroundColor: 'transparent !important'},}}>
+        <Menu iconShape="square" menuItemStyles={{button: {marginTop: 8, backgroundColor: 'transparent !important'}}}>
           <MenuItem color="inherit" className="sidebar-menu-item" icon={<MenuOutlinedIcon onClick={() => {collapseSidebar();}}/>}>
                 <Typography variant="h3">
                   ВНИИ "ЦЕНТР"
